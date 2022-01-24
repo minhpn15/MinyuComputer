@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react'
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 import Slider from 'react-slick'
 import { Image } from '@chakra-ui/react'
+import { ForwardArrow, BackArrow } from '@/assets/icons'
 import slideshow_1 from '../../assets/banner/slideshow_1.webp'
 import slideshow_2 from '../../assets/banner/slideshow_2.webp'
 import slideshow_3 from '../../assets/banner/slideshow_3.webp'
@@ -58,7 +58,7 @@ const Carousel = () => {
         zIndex={2}
         onClick={() => slider?.slickPrev()}
       >
-        <BiLeftArrowAlt />
+        <BackArrow />
       </IconButton>
       {/* Right Icon */}
       <IconButton
@@ -72,7 +72,7 @@ const Carousel = () => {
         zIndex={2}
         onClick={() => slider?.slickNext()}
       >
-        <BiRightArrowAlt />
+        <ForwardArrow />
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={slider => setSlider(slider)}>

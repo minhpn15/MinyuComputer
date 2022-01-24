@@ -10,7 +10,6 @@ import {
   chakra,
   useColorModeValue
 } from '@chakra-ui/react'
-import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 
 const ListHeader = ({ children }) => {
   return (
@@ -120,13 +119,13 @@ const Footer = () => {
           <Text>© 2022 Nhut Minh</Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} color={'gray.700'} href={'#'}>
-              <FaTwitter />
+              {/* <FaTwitter /> */} Twitter
             </SocialButton>
             <SocialButton label={'YouTube'} color={'gray.700'} href={'#'}>
-              <FaYoutube />
+              {/* <FaYoutube /> */} Youtube
             </SocialButton>
             <SocialButton label={'Instagram'} color={'gray.700'} href={'#'}>
-              <FaInstagram />
+              {/* <FaInstagram /> */} Instagram
             </SocialButton>
           </Stack>
         </Container>

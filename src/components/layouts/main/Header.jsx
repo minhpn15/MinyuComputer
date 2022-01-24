@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Input, Box, Container, IconButton } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
-import { Cart } from '@/components/icons'
+import { Cart } from '@/assets/icons'
 
 const Header = () => {
   const navigate = useNavigate()
