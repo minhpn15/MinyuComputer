@@ -86,7 +86,7 @@ const Cart = () => {
                 <Flex justifyContent={'space-between'}>
                   <Text>Tổng cộng</Text>
                   <Text color="pink.400" fontWeight={700}>
-                    17.800.000
+                    18.800.000
                   </Text>
                 </Flex>
                 <Divider variant="dashed" color="gray.800" />
