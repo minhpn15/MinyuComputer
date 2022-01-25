@@ -5,8 +5,7 @@ import LoginForm from './LoginForm'
 const LoginModal = ({ isOpen, onClose }) => {
   return (
     <ConfirmModal noButton isOpen={isOpen} onClose={onClose}>
-      <LoginForm />
-      {/* <span>sadfasf</span> */}
+      <LoginForm onClose={onClose} />
     </ConfirmModal>
   )
 }

@@ -6,6 +6,7 @@ import { Cart } from '@/assets/icons'
 
 const Header = () => {
   const navigate = useNavigate()
+
   return (
     <Container maxW="container.xl">
       <Box
@@ -13,8 +14,6 @@ const Header = () => {
         display="flex"
         alignItems="center"
         justifyContent="space-between"
-        borderBottom={'solid 1px'}
-        borderColor={'gray.200'}
         pb={4}
         mb={4}
       >
