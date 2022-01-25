@@ -11,6 +11,8 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 
+import { Twitter, Youtube, Instagram  } from '@/assets/icons'
+
 const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
@@ -106,13 +108,13 @@ const Footer = () => {
           <Text>© 2022 Nhut Minh</Text>
           <Stack direction={'row'} spacing={6}>
             <SocialButton label={'Twitter'} color={'gray.700'} href={'#'}>
-              {/* <Twitter /> */}
+              <Twitter />
             </SocialButton>
             <SocialButton label={'YouTube'} color={'gray.700'} href={'#'}>
-              {/* <FaYoutube /> */} Youtube
+              <Youtube />
             </SocialButton>
             <SocialButton label={'Instagram'} color={'gray.700'} href={'#'}>
-              {/* <FaInstagram /> */} Instagram
+              <Instagram />
             </SocialButton>
           </Stack>
         </Container>
