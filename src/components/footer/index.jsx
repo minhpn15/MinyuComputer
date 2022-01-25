@@ -55,49 +55,36 @@ const Footer = () => {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8}>
           <Stack align={'flex-start'}>
             <ListHeader>Cửa hàng</ListHeader>
-            <Link color={'gray.700'} href={'#'}>
-              Điện thoại: 0939.999.999
+            <Link to="#">
+              <Text color={'gray.700'}>Điện thoại: 0939.999.999</Text>
             </Link>
-            <Link color={'gray.700'} href={'#'}>
-              Zalo: 0939.999.999
+            <Link to="#">
+              <Text color={'gray.700'}>Zalo: 0939.999.999</Text>
             </Link>
-            <Link color={'gray.700'} href={'#'}>
-              Thời gian: 9h-21h từ thứ 2 - chủ nhật
+            <Link to="#">
+              <Text color={'gray.700'}>
+                Thời gian: 9h-21h từ thứ 2 - chủ nhật
+              </Text>
             </Link>
-            <Link color={'gray.700'} href={'#'}>
-              Địa chỉ: 123, Võ Văn Ngân, Thủ Đức, tp.Hồ Chí Minh
+            <Link to="#">
+              <Text color={'gray.700'}>
+                Địa chỉ: 123, Võ Văn Ngân, Thủ Đức, tp.Hồ Chí Minh
+              </Text>
             </Link>
           </Stack>
 
           <Stack align={'flex-start'}>
             <ListHeader>Hỗ trợ</ListHeader>
-            <Link color={'gray.700'} href={'#'}>
-              Hóa đơn điện tử
+            <Link to="#">
+              <Text color={'gray.700'}>Hóa đơn điện tử</Text>
             </Link>
-            <Link color={'gray.700'} href={'#'}>
-              Chính sách bảo hành
+            <Link to="#">
+              <Text color={'gray.700'}>Chính sách bảo hành</Text>
             </Link>
-            <Link color={'gray.700'} href={'#'}>
-              Tra cứu thông tin bảo hành
+            <Link to="#">
+              <Text color={'gray.700'}>Tra cứu thông tin bảo hành</Text>
             </Link>
           </Stack>
-
-          {/* <Stack align={'flex-start'}>
-            <ListHeader>Legal</ListHeader>
-            <Link color={'gray.700'} href={'#'}>
-              Cookies Policy
-            </Link>
-            <Link color={'gray.700'} href={'#'}>
-              Privacy Policy
-            </Link>
-            <Link color={'gray.700'} href={'#'}>
-              Terms of Service
-            </Link>
-            <Link color={'gray.700'} href={'#'}>
-              Law Enforcement
-            </Link>
-          </Stack> */}
-
           <Stack align={'flex-start'}>
             <ListHeader>Logo</ListHeader>
           </Stack>
