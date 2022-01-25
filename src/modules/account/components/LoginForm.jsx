@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   Button,
   Flex,
@@ -6,13 +7,12 @@ import {
   FormLabel,
   Heading,
   Input,
-  Link,
   Stack,
   Box,
   Text
 } from '@chakra-ui/react'
 
-const LoginForm = () => {
+const LoginForm = ({ onClose }) => {
   return (
     <Box>
       <Stack direction={{ base: 'column', md: 'row' }}>
@@ -35,12 +35,12 @@ const LoginForm = () => {
               >
                 <Flex>
                   <Text>Chưa có tài khoản?&nbsp;</Text>
-                  <Link color={'cyan.500'} href="/account/register">
-                    Đăng kí
+                  <Link to="/account/register" onClick={onClose}>
+                    <Text color={'cyan.500'}>Đăng kí</Text>
                   </Link>
                 </Flex>
-                <Link color={'cyan.500'} href="/account/forgot-password">
-                  Quên mật khẩu
+                <Link to="/account/forgot-password" onClick={onClose}>
+                  <Text color={'cyan.500'}> Quên mật khẩu</Text>
                 </Link>
               </Stack>
               <Button colorScheme={'cyan'} variant={'solid'} color={'white'}>

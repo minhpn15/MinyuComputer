@@ -77,7 +77,7 @@ const Carousel = () => {
       {/* Slider */}
       <Slider {...settings} ref={slider => setSlider(slider)}>
         {cards.map((url, index) => (
-          <Image alt={index} src={url} bgSize={'cover'} />
+          <Image key={url} alt={index} src={url} bgSize={'cover'} />
         ))}
       </Slider>
     </Box>
