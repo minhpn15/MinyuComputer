@@ -19,10 +19,11 @@ const HomeBanner = props => {
           height={'full'}
           p={{ base: 2, sm: 6, lg: 6 }}
           rounded={'xl'}
-          border="solid 2px"
-          borderColor={'cyan.300'}
+          bg="gray.200"
         >
-          <Heading fontSize={'2xl'}>Miễn phí vận chuyển</Heading>
+          <Heading color="gray.600" fontSize={'2xl'}>
+            Miễn phí vận chuyển
+          </Heading>
           <Text color="gray.600">
             100% đơn hàng đều được miễn phí vận chuyển khi thanh toán trước.
           </Text>
@@ -33,10 +34,11 @@ const HomeBanner = props => {
           height={'full'}
           p={{ base: 2, sm: 6, lg: 6 }}
           rounded={'xl'}
-          border="solid 2px"
-          borderColor={'purple.300'}
+          bg="gray.200"
         >
-          <Heading fontSize={'2xl'}>Bảo hành tận tâm</Heading>
+          <Heading color="gray.600" fontSize={'2xl'}>
+            Bảo hành tận tâm
+          </Heading>
           <Text color="gray.600">
             Bất kể giấy tờ thế nào, ThinkPro luôn cam kết sẽ hỗ trợ khách hàng
             tới cùng.
@@ -48,10 +50,11 @@ const HomeBanner = props => {
           height={'full'}
           p={{ base: 2, sm: 6, lg: 6 }}
           rounded={'xl'}
-          border="solid 2px"
-          borderColor={'pink.300'}
+          bg="gray.200"
         >
-          <Heading fontSize={'2xl'}>Đổi trả 1-1 hoặc hoàn tiền</Heading>
+          <Heading color="gray.600" fontSize={'2xl'}>
+            Đổi trả 1-1 hoặc hoàn tiền
+          </Heading>
           <Text color="gray.600">
             Nếu phát sinh lỗi hoặc bạn cảm thấy sản phẩm chưa đáp ứng được nhu
             cầu.

@@ -6,7 +6,7 @@ import useAuth from '@/lib/useAuth'
 
 const Topbar = () => {
   const navigate = useNavigate()
-  const { profile } = useAuth()
+  const { profile, logout } = useAuth()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const isLogged = useMemo(() => !!profile, [profile])
 
@@ -35,7 +35,13 @@ const Topbar = () => {
             >
               Tài khoản
             </Button>
-            <Button mx={2} colorScheme="cyan" size="xs" variant="ghost">
+            <Button
+              mx={2}
+              colorScheme="cyan"
+              size="xs"
+              variant="ghost"
+              onClick={logout}
+            >
               Đăng xuất
             </Button>
           </>

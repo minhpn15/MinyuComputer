@@ -18,11 +18,12 @@ const MainLayout = ({ children }) => {
           zIndex={10}
           borderBottom={'solid 1px'}
           borderColor={'gray.200'}
+          pb={5}
         >
           <Topbar />
           <Header />
         </Box>
-        <Container maxW="container.xl" marginTop="116px" paddingTop="32px">
+        <Container maxW="container.xl" marginTop="97px" paddingTop="32px">
           {children}
           <Outlet />
         </Container>

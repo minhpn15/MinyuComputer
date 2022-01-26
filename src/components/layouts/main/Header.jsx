@@ -1,49 +1,63 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button, Input, Box, Container, IconButton } from '@chakra-ui/react'
-import { SearchIcon } from '@chakra-ui/icons'
-import { Cart } from '@/assets/icons'
+import {
+  Button,
+  Input,
+  Box,
+  Container,
+  IconButton,
+  HStack,
+  Image
+  // useOutsideClick
+} from '@chakra-ui/react'
+import { SearchIcon, CloseIcon } from '@chakra-ui/icons'
+import { Cart, Logo, Menu as MenuIcon } from '@/assets/icons'
+import Menu from './Menu'
 
 const Header = () => {
+  const ref = React.useRef()
+  const [openMenu, setOpenMenu] = useState(false)
   const navigate = useNavigate()
 
+  // useOutsideClick({
+  //   ref: ref,
+  //   handler: () => {
+  //     setOpenMenu(false)
+  //   }
+  // })
+
   return (
-    <Container maxW="container.xl">
-      <Box
-        h={16}
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
-        pb={4}
-        mb={4}
-      >
-        <Box mx={4}>
-          <Button variant="unstyled" onClick={() => navigate('/')}>
-            Logo
-          </Button>
-        </Box>
-        <Box
-          mx={4}
-          w={'100%'}
-          display="flex"
-          alignItems="center"
-          justifyContent="space-between"
-        >
-          <Input placeholder="Tìm kiếm" />
-          <IconButton mx={2} icon={<SearchIcon />} />
-        </Box>
-        <Box>
+    <Box position="relative">
+      <Container maxW="container.xl">
+        <HStack spacing={6}>
+          <Box>
+            <Button variant="unstyled" onClick={() => navigate('/')}>
+              <Logo />
+            </Button>
+          </Box>
           <Button
-            mx={2}
-            colorScheme="cyan"
             variant="ghost"
-            onClick={() => navigate('cart')}
+            leftIcon={openMenu ? <CloseIcon /> : <MenuIcon />}
+            onClick={event => {
+              event.stopPropagation()
+              setOpenMenu(state => !state)
+            }}
           >
-            <Cart />
+            {openMenu ? 'Đóng' : 'Danh mục'}
           </Button>
-        </Box>
-      </Box>
-    </Container>
+          <HStack flex={1} spacing={4}>
+            <Input placeholder="Tìm kiếm" />
+            <IconButton ml={2} icon={<SearchIcon />} />
+            <IconButton
+              variant="ghost"
+              icon={<Cart />}
+              onClick={() => navigate('cart')}
+            />
+          </HStack>
+        </HStack>
+      </Container>
+      <Menu ref={ref} isOpen={openMenu} />
+    </Box>
   )
 }
 
