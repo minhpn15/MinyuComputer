@@ -31,7 +31,7 @@ const Topbar = () => {
               colorScheme="cyan"
               size="xs"
               variant="ghost"
-              onClick={() => navigate('account/me')}
+              onClick={() => navigate('profile')}
             >
               Tài khoản
             </Button>

@@ -43,7 +43,16 @@ const LoginForm = ({ onClose }) => {
                   <Text color={'cyan.500'}> Quên mật khẩu</Text>
                 </Link>
               </Stack>
-              <Button colorScheme={'cyan'} variant={'solid'} color={'white'}>
+              <Button
+                mt={8}
+                w={'full'}
+                bgGradient="linear(to-r, cyan.400,pink.400)"
+                color={'white'}
+                _hover={{
+                  bgGradient: 'linear(to-r, cyan.400,pink.400)',
+                  boxShadow: 'xl'
+                }}
+              >
                 Đăng nhập
               </Button>
             </Stack>

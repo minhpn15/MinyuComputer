@@ -4,6 +4,7 @@ import { Box, Container, SlideFade } from '@chakra-ui/react'
 const Menu = React.forwardRef(({ isOpen }, ref) => {
   const menuHeight = useMemo(() => (isOpen ? '90vh' : '0px'), [isOpen])
 
+  if (!isOpen) return null
   return (
     <Box
       height={menuHeight}

@@ -1,8 +1,13 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
+// Layput
 const MainLayout = lazy(() => import('@/components/layouts/main'))
+
+// Home
 const Home = lazy(() => import('@/modules/home/Home'))
+
+// Account
 const Account = lazy(() => import('@/modules/account/'))
 const Login = lazy(() => import('@/modules/account/pages/Login'))
 const Register = lazy(() => import('@/modules/account/pages/Register'))
@@ -12,9 +17,14 @@ const ForgotPassword = lazy(() =>
 const ResetPassword = lazy(() =>
   import('@/modules/account/pages/ResetPassword')
 )
+const Profile = lazy(() => import('@/modules/account/pages/Profile'))
 const Cart = lazy(() => import('@/modules/cart'))
+
+// Product
 const Product = lazy(() => import('@/modules/product'))
 const ProductDetail = lazy(() => import('@/modules/product/pages/Detail'))
+
+// other
 const NotFound = lazy(() => import('@/components/NotFound'))
 
 const appRoutes = [
@@ -52,6 +62,11 @@ const appRoutes = [
             path: 'reset-password',
             name: 'Khôi phục mật khẩu',
             element: ResetPassword
+          },
+          {
+            path: 'profile',
+            name: 'Tài khoản',
+            element: Profile
           }
         ]
       },
