@@ -11,7 +11,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 
-import { Twitter, Youtube, Instagram  } from '@/assets/icons'
+import { Twitter, Youtube, Instagram, Logo } from '@/assets/icons'
 
 const ListHeader = ({ children }) => {
   return (
@@ -86,7 +86,9 @@ const Footer = () => {
             </Link>
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Logo</ListHeader>
+            <ListHeader>
+                <Logo />
+            </ListHeader>
           </Stack>
         </SimpleGrid>
       </Container>

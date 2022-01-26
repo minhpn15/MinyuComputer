@@ -12,6 +12,7 @@ const Menu = React.forwardRef(({ isOpen }, ref) => {
       top="100%"
       left={0}
       bg="rgba(0, 0, 0, 0.39)"
+      mt={5}
     >
       <SlideFade in={isOpen}>
         <Box ref={ref} minHeight="600px" bg="white" shadow="md">

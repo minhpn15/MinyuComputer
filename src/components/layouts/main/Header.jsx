@@ -6,11 +6,12 @@ import {
   Box,
   Container,
   IconButton,
-  HStack
+  HStack,
+  Image
   // useOutsideClick
 } from '@chakra-ui/react'
 import { SearchIcon, CloseIcon } from '@chakra-ui/icons'
-import { Cart, Menu as MenuIcon } from '@/assets/icons'
+import { Cart, Logo, Menu as MenuIcon } from '@/assets/icons'
 import Menu from './Menu'
 
 const Header = () => {
@@ -31,7 +32,7 @@ const Header = () => {
         <HStack spacing={6}>
           <Box>
             <Button variant="unstyled" onClick={() => navigate('/')}>
-              Logo
+              <Logo />
             </Button>
           </Box>
           <Button
