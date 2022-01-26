@@ -31,7 +31,8 @@ export default ({ children }) => {
     () => ({
       profile,
       logout,
-      isLoading
+      isLoading,
+      isLogged: !!profile
     }),
     [profile, logout, isLoading]
   )

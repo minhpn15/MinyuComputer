@@ -26,7 +26,7 @@ const Register = () => {
               lineHeight={1.1}
               fontSize={{ base: '3xl', sm: '4xl', md: '5xl', lg: '6xl' }}
             >
-              Xin chào!
+              Là thành viên với chúng tôi để nhận ưu đãi sớm nhất!
             </Heading>
           </Center>
           {/* <Image scr={imgRegister} height={{ base: 200 }} /> */}
