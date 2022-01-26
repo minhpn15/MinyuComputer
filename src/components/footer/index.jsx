@@ -11,8 +11,7 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 
-import { Twitter, Youtube, Instagram } from '@/assets/icons'
-import { Logo } from '@/assets/icons'
+import { Twitter, Youtube, Instagram, Logo } from '@/assets/icons'
 
 const ListHeader = ({ children }) => {
   return (
