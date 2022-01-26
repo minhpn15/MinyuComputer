@@ -20,15 +20,12 @@ export default ({ children }) => {
   // TODO
   // if get profile fail =>  show popup
 
-  const logout = useCallback(
-    cb => {
-      removeToken()
-      remove()
-      queryClient.removeQueries(['profile'])
-      cb && cb()
-    },
-    [remove, queryClient]
-  )
+  const logout = useCallback(() => {
+    remove()
+    queryClient.removeQueries('profile')
+    removeToken()
+    // cb && cb()
+  }, [remove, queryClient])
 
   const contextValue = useMemo(
     () => ({
