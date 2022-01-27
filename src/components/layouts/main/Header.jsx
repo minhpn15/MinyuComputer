@@ -10,12 +10,14 @@ import {
   HStack,
   InputGroup,
   InputRightElement,
+  Tooltip,
   useBoolean,
   useOutsideClick,
   useDisclosure
 } from '@chakra-ui/react'
 import { SearchIcon, CloseIcon } from '@chakra-ui/icons'
 import { Cart, Logo, Menu as MenuIcon } from '@/assets/icons'
+import UserIconGroup from './UserIconGroup'
 import Menu from './Menu'
 
 const Header = () => {
@@ -50,15 +52,15 @@ const Header = () => {
               <Logo />
             </Button>
           </Box>
-          <Button
-            variant="ghost"
-            leftIcon={isOpen ? <CloseIcon /> : <MenuIcon />}
-            onMouseEnter={setOverMenuBtn.on}
-            onMouseLeave={setOverMenuBtn.off}
-            onClick={onToggle}
-          >
-            {isOpen ? 'Đóng' : 'Danh mục'}
-          </Button>
+          <Tooltip label={isOpen ? 'Đóng' : 'Danh mục'}>
+            <IconButton
+              icon={isOpen ? <CloseIcon /> : <MenuIcon />}
+              variant="ghost"
+              onMouseEnter={setOverMenuBtn.on}
+              onMouseLeave={setOverMenuBtn.off}
+              onClick={onToggle}
+            />
+          </Tooltip>
           <HStack flex={1} spacing={4}>
             <InputGroup>
               <Input placeholder="Tìm kiếm" onChange={onSearchDebounced} />
@@ -67,11 +69,14 @@ const Header = () => {
                 children={<SearchIcon color="gray.300" />}
               />
             </InputGroup>
-            <IconButton
-              variant="ghost"
-              icon={<Cart />}
-              onClick={() => navigate('cart')}
-            />
+            <Tooltip label={'Giỏ hàng'}>
+              <IconButton
+                variant="ghost"
+                icon={<Cart />}
+                onClick={() => navigate('cart')}
+              />
+            </Tooltip>
+            <UserIconGroup />
           </HStack>
         </HStack>
       </Container>

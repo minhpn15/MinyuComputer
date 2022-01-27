@@ -22,6 +22,7 @@ const Cart = lazy(() => import('@/modules/cart'))
 
 // Product
 const Product = lazy(() => import('@/modules/product'))
+const ProductList = lazy(() => import('@/modules/product/pages/List'))
 const ProductDetail = lazy(() => import('@/modules/product/pages/Detail'))
 
 // other
@@ -75,6 +76,11 @@ const appRoutes = [
         name: 'Sản phẩm',
         element: Product,
         children: [
+          {
+            index: true,
+            name: 'Sản phẩm',
+            element: ProductList
+          },
           {
             path: ':id',
             name: 'Chi tiết sản phẩm',

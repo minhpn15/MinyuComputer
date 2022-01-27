@@ -12,7 +12,13 @@ import {
   Text
 } from '@chakra-ui/react'
 
+import { setToken } from '@/utils/auth'
+
 const LoginForm = ({ onClose }) => {
+  const onLogin = () => {
+    setToken('token')
+  }
+
   return (
     <Box>
       <Stack direction={{ base: 'column', md: 'row' }}>
@@ -52,6 +58,7 @@ const LoginForm = ({ onClose }) => {
                   bgGradient: 'linear(to-r, cyan.400,pink.400)',
                   boxShadow: 'xl'
                 }}
+                onClick={onLogin}
               >
                 Đăng nhập
               </Button>
