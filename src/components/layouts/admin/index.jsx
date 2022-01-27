@@ -2,9 +2,8 @@ import { Outlet } from 'react-router-dom'
 import { Box, Container } from '@chakra-ui/react'
 import AuthProvider from '@/lib/AuthProvider'
 import Header from './Header'
-import Footer from '../../footer'
 
-const MainLayout = ({ children }) => {
+const AdminMainLayout = ({ children }) => {
   return (
     <AuthProvider>
       <Box as="main">
@@ -25,10 +24,9 @@ const MainLayout = ({ children }) => {
           {children}
           <Outlet />
         </Container>
-        <Footer />
       </Box>
     </AuthProvider>
   )
 }
 
-export default MainLayout
+export default AdminMainLayout

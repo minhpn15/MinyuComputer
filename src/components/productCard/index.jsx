@@ -20,6 +20,7 @@ const ProductCard = props => {
   const product = productD
   return (
     <Box
+      cursor="pointer"
       maxW={220}
       borderWidth="1px"
       borderRadius="lg"

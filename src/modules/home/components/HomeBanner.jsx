@@ -40,7 +40,7 @@ const HomeBanner = props => {
             Bảo hành tận tâm
           </Heading>
           <Text color="gray.600">
-            Bất kể giấy tờ thế nào, ThinkPro luôn cam kết sẽ hỗ trợ khách hàng
+            Bất kể giấy tờ thế nào, chúng tôi luôn cam kết sẽ hỗ trợ khách hàng
             tới cùng.
           </Text>
         </Box>

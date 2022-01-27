@@ -54,7 +54,7 @@ const Footer = () => {
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8}>
           <Stack align={'flex-start'}>
-            <ListHeader>Cửa hàng</ListHeader>
+            <ListHeader>Minyu Computer</ListHeader>
             <Link to="#">
               <Text color={'gray.700'}>Điện thoại: 0939.999.999</Text>
             </Link>
@@ -87,7 +87,7 @@ const Footer = () => {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>
-                <Logo />
+              <Logo />
             </ListHeader>
           </Stack>
         </SimpleGrid>
