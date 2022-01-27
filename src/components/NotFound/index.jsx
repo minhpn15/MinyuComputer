@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Box, Text, Button, Image, VStack, HStack } from '@chakra-ui/react'
+import { Box, Text, Image, VStack, HStack } from '@chakra-ui/react'
 
 const imageUrl =
   'https://cdn.dribbble.com/users/252114/screenshots/3840347/mong03b.gif'
@@ -18,9 +18,9 @@ const NotFound = () => {
             </Text>
             <Text>Trang không tồn tại!</Text>
           </HStack>
-          <Button variant="outline" onClick={() => navigate('/')}>
+          {/* <Button variant="outline" onClick={() => navigate('/')}>
             <Text color={'cyan.500'}>Trang chủ</Text>
-          </Button>
+          </Button> */}
         </VStack>
       </VStack>
     </Box>

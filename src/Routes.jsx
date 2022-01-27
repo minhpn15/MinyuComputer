@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 
 // Layput
 const MainLayout = lazy(() => import('@/components/layouts/main'))
+const AdminMainLayout = lazy(() => import('@/components/layouts/admin'))
 
 // Home
 const Home = lazy(() => import('@/modules/home/Home'))
@@ -92,6 +93,12 @@ const appRoutes = [
       { path: 'cart', name: 'Giỏ hàng', element: Cart },
       { path: '*', element: NotFound }
     ]
+  },
+  {
+    path: '/admin',
+    name: 'Admin Layout',
+    element: AdminMainLayout,
+    children: [{ path: '*', element: NotFound }]
   }
 ]
 

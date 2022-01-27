@@ -1,18 +1,39 @@
-// export const LAPTOP_LINE_BY_BRANCHES = Object.freeze({
-//   ASUS: ['Vivobook', 'Zenbook', 'TUF/ROG'],
-//   MSI: ['GF Series', 'GT Series', 'GL Series']
-// })
-
-export const LAPTOP_BRANCHES = Object.freeze({
+export const LAPTOP_LINE_BY_BRANDS = Object.freeze({
   ASUS: ['Vivobook', 'Zenbook', 'TUF/ROG'],
-  ACER: ['Nitro', 'Predator', 'Aspire'],
   MSI: ['GF Series', 'GT Series', 'GL Series'],
+  ACER: ['Nitro', 'Predator', 'Aspire'],
   DELL: ['Inspiron', 'Vostro', 'Alieware'],
   HP: ['Elitebook', 'Zbook', 'Envy/Spectre'],
   APPLE: ['Macbook Pro', 'Macbook Air']
 })
 
-export const KEYBOARD_BRANCHES = Object.freeze({
+export const LAPTOP_BRANDS = Object.freeze({
+  ASUS: 'ASUS',
+  ACER: 'ACER',
+  MSI: 'MSI',
+  DELL: 'DELL',
+  HP: 'HP',
+  APPLE: 'APPLE'
+})
+
+export const KEYBOARD_BRANDS = Object.freeze({
+  LOGITECH: 'LOGITECH',
+  RAZER: 'RAZER',
+  CORSAIR: 'CORSAIR',
+  AKKO: 'AKKO',
+  DAREU: 'DAREU',
+  NEWMEN: 'NEWMEN',
+  NEWMEN2: 'NEWMEN',
+  NEWMEN3: 'NEWMEN',
+  NEWMEN4: 'NEWMEN',
+  NEWMEN5: 'NEWMEN',
+  NEWMEN6: 'NEWMEN',
+  NEWMEN7: 'NEWMEN',
+  NEWMEN8: 'NEWMEN',
+  NEWMEN9: 'NEWMEN'
+})
+
+export const MOUSE_BRANDS = Object.freeze({
   LOGITECH: 'LOGITECH',
   RAZER: 'RAZER',
   CORSAIR: 'CORSAIR',
@@ -21,16 +42,7 @@ export const KEYBOARD_BRANCHES = Object.freeze({
   NEWMEN: 'NEWMEN'
 })
 
-export const MOUSE_BRANCHES = Object.freeze({
-  LOGITECH: 'LOGITECH',
-  RAZER: 'RAZER',
-  CORSAIR: 'CORSAIR',
-  AKKO: 'AKKO',
-  DAREU: 'DAREU',
-  NEWMEN: 'NEWMEN'
-})
-
-export const HEADPHONE_BRANCHES = Object.freeze({
+export const HEADPHONE_BRANDS = Object.freeze({
   LOGITECH: 'LOGITECH',
   RAZER: 'RAZER',
   CORSAIR: 'CORSAIR',
@@ -39,31 +51,32 @@ export const HEADPHONE_BRANCHES = Object.freeze({
   HYPERX: 'HYPERX'
 })
 
-export const MAINBOARD_BRANCHES = Object.freeze({
-  AMD: ['A320', 'B450', 'X470'],
-  INTEL: ['H610', 'B660', 'Z690']
+export const MAINBOARD_BRANDS = Object.freeze({
+  GIGABYE: 'GIGABYE',
+  ASUS: 'ASUS',
+  MSI: 'MSI'
 })
 
-export const CPU_BRANCHES = Object.freeze({
-  AMD: ['AMD Gen 3', 'AMD Gen 5', 'AMD Threadripper Gen 3'],
-  INTEL: ['INTEL Gen 10', 'INTEL Gen 11', 'INTEL Gen 12']
+export const CPU_BRANDS = Object.freeze({
+  AMD: 'AMD',
+  INTEL: 'INTEL'
 })
 
-export const SSD_BRANCHES = Object.freeze({
+export const SSD_BRANDS = Object.freeze({
   SAMSUNG: 'SAMSUNG',
-  WESTERN: ['BLUE', 'RED', 'PURPLE'],
+  WESTERN: 'WESTERN',
   KINGSTON: 'KINGSTON',
   GIGABYTE: 'GIGABYTE',
   PNY: 'PNY'
 })
 
-export const VGA_BRANCHES = Object.freeze({
-  ASUS: ['TUF Series', 'ROGSTRIX Series'],
-  GIGABYTE: ['Gigabye GeForce', 'Gigabyte Aorus'],
-  MSI: ['MSI Ventus', 'MSI Gaming Z TRIO']
+export const VGA_BRANDS = Object.freeze({
+  ASUS: 'ASUS',
+  GIGABYTE: 'GIGABYTE',
+  MSI: 'MSI'
 })
 
-export const RAM_BRANCHES = Object.freeze({
+export const RAM_BRANDS = Object.freeze({
   SAMSUNG: 'SAMSUNG',
   CORSAIR: 'CORSAIR',
   KINGSTON: 'KINGSTON',
@@ -71,7 +84,7 @@ export const RAM_BRANCHES = Object.freeze({
   TEAMGROUP: 'TEAMGROUP'
 })
 
-export const MONITOR_BRANCHES = Object.freeze({
+export const MONITOR_BRANDS = Object.freeze({
   ASUS: 'ASUS',
   ACER: 'ACER',
   DELL: 'DELL',
@@ -81,33 +94,33 @@ export const MONITOR_BRANCHES = Object.freeze({
   AOC: 'AOC'
 })
 
-export const CASE_BRANCHES = Object.freeze({
+export const CASE_BRANDS = Object.freeze({
   COOLERMASTER: 'COOLERMASTER',
-  XIGMATEK:'XIGMATEK',
+  XIGMATEK: 'XIGMATEK',
   NZXT: 'NZXT',
   DEEPCOOL: 'DEEPCOOL',
   CORSAIR: 'CORSAIR'
 })
 
-export const PSU_BRANCHES = Object.freeze({
+export const PSU_BRANDS = Object.freeze({
   COOLERMASTER: 'COOLERMASTER',
-  GIGABYE:'GIGABYE',
+  GIGABYE: 'GIGABYE',
   ASUS: 'ASUS',
   XIGMATEK: 'XIGMATEK',
   CORSAIR: 'CORSAIR'
 })
 
 export const PRODUCT_TYPES = Object.freeze({
-  LAPTOP: 'LAPTOP',
-  KEYBOARD: 'KEYBOARD',
-  MOUSE: 'MOUSE',
-  HEADPHONE: 'HEADPHONE',
-  MAINBOARD: 'MAINBOARD',
-  CPU: 'CPU',
-  SSD: 'SSD',
-  VGA: 'VGA',
-  RAM: 'RAM',
-  MONITOR: 'MONITOR',
-  CASE: 'CASE',
-  PSU: 'PSU'
+  LAPTOP: LAPTOP_BRANDS,
+  KEYBOARD: KEYBOARD_BRANDS,
+  MOUSE: MOUSE_BRANDS,
+  HEADPHONE: HEADPHONE_BRANDS,
+  MAINBOARD: MAINBOARD_BRANDS,
+  CPU: CPU_BRANDS,
+  SSD: SSD_BRANDS,
+  VGA: VGA_BRANDS,
+  RAM: RAM_BRANDS,
+  MONITOR: MONITOR_BRANDS,
+  CASE: CASE_BRANDS,
+  PSU: PSU_BRANDS
 })
