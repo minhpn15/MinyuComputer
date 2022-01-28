@@ -18,9 +18,6 @@ const NotFound = () => {
             </Text>
             <Text>Trang không tồn tại!</Text>
           </HStack>
-          {/* <Button variant="outline" onClick={() => navigate('/')}>
-            <Text color={'cyan.500'}>Trang chủ</Text>
-          </Button> */}
         </VStack>
       </VStack>
     </Box>

@@ -3,7 +3,7 @@ import { Box, Container } from '@chakra-ui/react'
 import AuthProvider from '@/lib/AuthProvider'
 import Header from './Header'
 
-const AdminMainLayout = ({ children }) => {
+const AdminLayout = ({ children }) => {
   return (
     <AuthProvider>
       <Box as="main">
@@ -29,4 +29,4 @@ const AdminMainLayout = ({ children }) => {
   )
 }
 
-export default AdminMainLayout
+export default AdminLayout

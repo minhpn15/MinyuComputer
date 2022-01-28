@@ -56,33 +56,29 @@ const Footer = () => {
           <Stack align={'flex-start'}>
             <ListHeader>Minyu Computer</ListHeader>
             <Link to="#">
-              <Text color={'gray.700'}>Điện thoại: 0939.999.999</Text>
+              <Text>Điện thoại: 0939.999.999</Text>
             </Link>
             <Link to="#">
-              <Text color={'gray.700'}>Zalo: 0939.999.999</Text>
+              <Text>Zalo: 0939.999.999</Text>
             </Link>
             <Link to="#">
-              <Text color={'gray.700'}>
-                Thời gian: 9h-21h từ thứ 2 - chủ nhật
-              </Text>
+              <Text>Thời gian: 9h-21h từ thứ 2 - chủ nhật</Text>
             </Link>
             <Link to="#">
-              <Text color={'gray.700'}>
-                Địa chỉ: 123, Võ Văn Ngân, Thủ Đức, tp.Hồ Chí Minh
-              </Text>
+              <Text>Địa chỉ: 123, Võ Văn Ngân, Thủ Đức, tp.Hồ Chí Minh</Text>
             </Link>
           </Stack>
 
           <Stack align={'flex-start'}>
             <ListHeader>Hỗ trợ</ListHeader>
             <Link to="#">
-              <Text color={'gray.700'}>Hóa đơn điện tử</Text>
+              <Text>Hóa đơn điện tử</Text>
             </Link>
             <Link to="#">
-              <Text color={'gray.700'}>Chính sách bảo hành</Text>
+              <Text>Chính sách bảo hành</Text>
             </Link>
             <Link to="#">
-              <Text color={'gray.700'}>Tra cứu thông tin bảo hành</Text>
+              <Text>Tra cứu thông tin bảo hành</Text>
             </Link>
           </Stack>
           <Stack align={'flex-start'}>
@@ -109,13 +105,13 @@ const Footer = () => {
         >
           <Text>© 2022 Nhut Minh</Text>
           <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} color={'gray.700'} href={'#'}>
+            <SocialButton label={'Twitter'} href={'#'}>
               <Twitter />
             </SocialButton>
-            <SocialButton label={'YouTube'} color={'gray.700'} href={'#'}>
+            <SocialButton label={'YouTube'} href={'#'}>
               <Youtube />
             </SocialButton>
-            <SocialButton label={'Instagram'} color={'gray.700'} href={'#'}>
+            <SocialButton label={'Instagram'} href={'#'}>
               <Instagram />
             </SocialButton>
           </Stack>

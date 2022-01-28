@@ -15,7 +15,6 @@ import { Logo, Logout as LogoutIcon } from '@/assets/icons'
 import useAuth from '@/lib/useAuth'
 
 const Header = () => {
-  const ref = React.useRef()
   const navigate = useNavigate()
 
   const { isLogged, profile, logout } = useAuth()

@@ -1,9 +1,10 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-// Layput
-const MainLayout = lazy(() => import('@/components/layouts/main'))
-const AdminMainLayout = lazy(() => import('@/components/layouts/admin'))
+// Layout
+const AuthLayout = lazy(() => import('@/layouts/AuthLayout'))
+const MainLayout = lazy(() => import('@/layouts/main'))
+const AdminLayout = lazy(() => import('@/layouts/admin'))
 
 // Home
 const Home = lazy(() => import('@/modules/home/Home'))
@@ -32,73 +33,80 @@ const NotFound = lazy(() => import('@/components/NotFound'))
 const appRoutes = [
   {
     path: '/',
-    name: 'Layout',
-    element: MainLayout,
+    name: 'root',
+    element: AuthLayout,
     children: [
       {
-        index: true,
-        name: 'Trang chủ',
-        element: Home
-      },
-      {
-        path: 'account',
-        name: 'Tài khoản',
-        element: Account,
-        children: [
-          {
-            path: 'login',
-            name: 'Đăng nhập',
-            element: Login
-          },
-          {
-            path: 'register',
-            name: 'Đăng kí',
-            element: Register
-          },
-          {
-            path: 'forgot-password',
-            name: 'Quên mật khẩu',
-            element: ForgotPassword
-          },
-          {
-            path: 'reset-password',
-            name: 'Khôi phục mật khẩu',
-            element: ResetPassword
-          },
-          {
-            path: 'profile',
-            name: 'Tài khoản',
-            element: Profile
-          }
-        ]
-      },
-      {
-        path: 'product',
-        name: 'Sản phẩm',
-        element: Product,
+        path: '/',
+        name: 'Layout',
+        element: MainLayout,
         children: [
           {
             index: true,
-            name: 'Sản phẩm',
-            element: ProductList
+            name: 'Trang chủ',
+            element: Home
           },
           {
-            path: ':id',
-            name: 'Chi tiết sản phẩm',
-            element: ProductDetail
+            path: 'account',
+            name: 'Tài khoản',
+            element: Account,
+            children: [
+              {
+                path: 'login',
+                name: 'Đăng nhập',
+                element: Login
+              },
+              {
+                path: 'register',
+                name: 'Đăng kí',
+                element: Register
+              },
+              {
+                path: 'forgot-password',
+                name: 'Quên mật khẩu',
+                element: ForgotPassword
+              },
+              {
+                path: 'reset-password',
+                name: 'Khôi phục mật khẩu',
+                element: ResetPassword
+              },
+              {
+                path: 'profile',
+                name: 'Tài khoản',
+                element: Profile
+              }
+            ]
           },
+          {
+            path: 'product',
+            name: 'Sản phẩm',
+            element: Product,
+            children: [
+              {
+                index: true,
+                name: 'Sản phẩm',
+                element: ProductList
+              },
+              {
+                path: ':id',
+                name: 'Chi tiết sản phẩm',
+                element: ProductDetail
+              },
+              { path: '*', element: NotFound }
+            ]
+          },
+          { path: 'cart', name: 'Giỏ hàng', element: Cart },
           { path: '*', element: NotFound }
         ]
       },
-      { path: 'cart', name: 'Giỏ hàng', element: Cart },
-      { path: '*', element: NotFound }
+      {
+        path: '/admin',
+        name: 'Admin Layout',
+        element: AdminLayout,
+        children: [{ path: '*', element: NotFound }]
+      }
     ]
-  },
-  {
-    path: '/admin',
-    name: 'Admin Layout',
-    element: AdminMainLayout,
-    children: [{ path: '*', element: NotFound }]
   }
 ]
 

@@ -9,9 +9,14 @@ import {
   Text
 } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { ProductCard } from '@/components'
+import { ProductCard, LoadingWrapper } from '@/components'
 
-const ProductSection = ({ title, products = [1, 2, 3, 4, 5, 6, 7] }) => {
+const ProductSection = ({
+  title,
+  isLoading,
+  products = [],
+  onViewMore = () => {}
+}) => {
   return (
     <Box as="section" mb={8} borderColor="gray.300">
       {/* Title */}
@@ -23,21 +28,27 @@ const ProductSection = ({ title, products = [1, 2, 3, 4, 5, 6, 7] }) => {
           <Button
             variant="transparent"
             rightIcon={<ArrowForwardIcon color="white" />}
+            onClick={onViewMore}
           >
             <Text color="white">Xem thêm</Text>
           </Button>
         </Flex>
       </Box>
       {/* Products */}
-      <Box py={6}>
-        <Wrap spacing={6}>
-          {products.map((product, index) => (
-            <WrapItem key={index}>
-              <ProductCard product={product} />
-            </WrapItem>
-          ))}
-        </Wrap>
-      </Box>
+      <LoadingWrapper
+        isLoading={isLoading}
+        isEmpty={!products || products.length === 0}
+      >
+        <Box py={6}>
+          <Wrap spacing={6}>
+            {products.map((product, index) => (
+              <WrapItem key={index}>
+                <ProductCard product={product} />
+              </WrapItem>
+            ))}
+          </Wrap>
+        </Box>
+      </LoadingWrapper>
     </Box>
   )
 }

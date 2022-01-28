@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Badge, Image, Box, Button } from '@chakra-ui/react'
+import { Badge, Image, Box } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
 
 const productD = {
