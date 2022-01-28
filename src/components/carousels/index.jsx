@@ -6,6 +6,11 @@ import { ForwardArrow, BackArrow } from '@/assets/icons'
 import slideshow_1 from '../../assets/banner/slideshow_1.webp'
 import slideshow_2 from '../../assets/banner/slideshow_2.webp'
 import slideshow_3 from '../../assets/banner/slideshow_3.webp'
+import slideshow_4 from '../../assets/banner/slideshow_4.webp'
+import slideshow_5 from '../../assets/banner/slideshow_5.webp'
+import slideshow_6 from '../../assets/banner/slideshow_6.webp'
+import slideshow_7 from '../../assets/banner/slideshow_7.webp'
+import slideshow_8 from '../../assets/banner/slideshow_8.webp'
 
 const settings = {
   dots: true,
@@ -19,7 +24,7 @@ const settings = {
   slidesToScroll: 1
 }
 
-const cards = [slideshow_1, slideshow_2, slideshow_3]
+const cards = [slideshow_1, slideshow_2, slideshow_3, slideshow_4, slideshow_5, slideshow_6, slideshow_7, slideshow_8]
 
 const Carousel = () => {
   const [slider, setSlider] = React.useState(null)
@@ -30,7 +35,7 @@ const Carousel = () => {
   return (
     <Box
       position={'relative'}
-      height={'500px'}
+      height={'413px'}
       width={'full'}
       overflow={'hidden'}
       borderRadius={'xl'}
