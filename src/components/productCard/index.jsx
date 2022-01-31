@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Badge, Image, Box } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
+import { formatCurrency } from '@/utils/common'
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate()
@@ -35,8 +36,7 @@ const ProductCard = ({ product }) => {
         </Box>
 
         <Box color="red.400" fontSize="md" fontWeight="bold">
-          {product.price}
-          <Box as="span"> VND</Box>
+          {formatCurrency(product?.price)}
         </Box>
 
         <Box display="flex" mt="2" alignItems="center">

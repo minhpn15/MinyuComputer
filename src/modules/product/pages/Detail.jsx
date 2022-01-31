@@ -18,6 +18,7 @@ import {
 import { LoadingWrapper } from '@/components'
 import { useStore } from '@/lib/StoreProvider'
 import useToast from '@/lib/useToast'
+import { formatCurrency } from '@/utils/common'
 import useGetProductById from '../services/useGetProductById'
 
 const Detail = () => {
@@ -100,9 +101,9 @@ const Detail = () => {
                 fontWeight={'bold'}
                 color={'pink.500'}
               >
-                {product?.price}
+                {formatCurrency(product?.price)}
               </Text>
-              <Text as="span" fontSize={'xl'} color={'pink.500'}>
+              <Text as="span" fontSize={'lg'} color={'pink.500'}>
                 -12%
               </Text>
             </Box>
