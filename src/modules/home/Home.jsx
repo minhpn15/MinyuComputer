@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
 import { HomeBanner, ProductSection } from './components'
-import { LAPTOP, KEYBOARD } from '@/constant/mockData'
+import { LAPTOP, MONITOR, KEYBOARD } from '@/constant/mockData'
 
 const sections = [
   {
@@ -9,8 +9,8 @@ const sections = [
     products: LAPTOP
   },
   {
-    title: 'LAPTOP VĂN PHÒNG - MIỄN PHÍ GIAO HÀNG TOÀN QUỐC',
-    products: LAPTOP
+    title: 'MÀN HÌNH GIÁ TỐT - MIỄN PHÍ GIAO HÀNG TOÀN QUỐC',
+    products: MONITOR
   },
   {
     title: 'BÀN PHÍM KHUYẾN MÃI HOT - GIAO HÀNG MIỄN PHÍ',

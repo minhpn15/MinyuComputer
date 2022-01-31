@@ -1,4 +1,5 @@
 import React from 'react'
+import qs from 'qs'
 import { useNavigate } from 'react-router-dom'
 import { useDebouncedCallback } from 'use-debounce'
 import shallow from 'zustand/shallow'
@@ -43,11 +44,11 @@ const Header = () => {
     handler: () => debounced()
   })
 
-  const onSearch = value => {
-    onToggle(false)
+  const onSearch = filterData => {
+    onClose()
     navigate({
       pathname: 'product',
-      search: `?filter=${value}&page=${page || 1}&size=${size || 20}`
+      search: `?${qs.stringify({ ...filterData, page: 1, size: size || 20 })}`
     })
   }
   const onSearchDebounced = useDebouncedCallback(onSearch, 700)
@@ -55,7 +56,7 @@ const Header = () => {
   const onFilterChange = event => {
     const value = event.target.value
     setSearchValue(value)
-    onSearchDebounced(value)
+    onSearchDebounced({ filter: value })
   }
 
   return (

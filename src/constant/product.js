@@ -25,12 +25,7 @@ export const KEYBOARD_BRANDS = Object.freeze({
   NEWMEN: 'NEWMEN',
   MISTEL: 'MISTEL',
   FUHLEN: 'FUHLEN',
-  ASUS: 'ASUS',
-  NEWMEN5: 'NEWMEN',
-  NEWMEN6: 'NEWMEN',
-  NEWMEN7: 'NEWMEN',
-  NEWMEN8: 'NEWMEN',
-  NEWMEN9: 'NEWMEN'
+  ASUS: 'ASUS'
 })
 
 export const MOUSE_BRANDS = Object.freeze({
