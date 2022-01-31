@@ -26,11 +26,11 @@ export const KEYBOARD_BRANDS = Object.freeze({
   MISTEL: 'MISTEL',
   FUHLEN: 'FUHLEN',
   ASUS: 'ASUS',
-  NEWMEN5: 'NEWMEN',
-  NEWMEN6: 'NEWMEN',
-  NEWMEN7: 'NEWMEN',
-  NEWMEN8: 'NEWMEN',
-  NEWMEN9: 'NEWMEN'
+  STEELSERIES: 'STEELSERIES',
+  COOLERMASTER: 'COOLERMASTER',
+  DUCKY: 'DUCKY',
+  HAVIT: 'HAVIT',
+  EDRA: 'EDRA'
 })
 
 export const MOUSE_BRANDS = Object.freeze({
@@ -39,7 +39,7 @@ export const MOUSE_BRANDS = Object.freeze({
   CORSAIR: 'CORSAIR',
   AKKO: 'AKKO',
   DAREU: 'DAREU',
-  NEWMEN: 'NEWMEN'
+  STEELSERIES: 'STEELSERIES'
 })
 
 export const HEADPHONE_BRANDS = Object.freeze({
