@@ -1,10 +1,15 @@
 import create from 'zustand'
 import { persist } from 'zustand/middleware'
 
-const useCartStore = () =>
+const createStore = () =>
   create(
     persist(
       (set, get) => ({
+        // user
+        profile: null,
+        setProfile: p => set({ profile: p }),
+        removeProfile: () => set({ profile: null }),
+        // cart
         cart: [],
         addProductToCart: product => {
           const cart = get().cart
@@ -23,9 +28,9 @@ const useCartStore = () =>
           set(state => ({ cart: state.cart.filter(p => p.id !== product.id) }))
       }),
       {
-        name: 'cart-storage'
+        name: 'app-storage'
       }
     )
   )
 
-export default useCartStore
+export default createStore

@@ -1,6 +1,6 @@
 import React from 'react'
 import createContext from 'zustand/context'
-import useCartStore from '@/modules/cart/useCartStore'
+import useCartStore from '@/lib/createStore'
 
 const { Provider, useStore } = createContext()
 
