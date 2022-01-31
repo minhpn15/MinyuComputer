@@ -19,3 +19,14 @@ export const getById = id => {
     resolve(product)
   })
 }
+
+export const findByName = name => {
+  const filter = (name || '').toLocaleLowerCase()
+  return new Promise(resolve => {
+    const products = ALL_PRODUCTS.filter(p => {
+      const productName = (p?.name || '').toLocaleLowerCase()
+      return productName.includes(filter)
+    })
+    resolve(products)
+  })
+}

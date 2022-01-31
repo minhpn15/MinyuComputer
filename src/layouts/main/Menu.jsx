@@ -13,13 +13,13 @@ import {
 
 import { LAPTOP_LINE_BY_BRANDS, PRODUCT_TYPES } from '@/constant/product'
 
-const Menu = React.forwardRef(({ isOpen }, ref) => {
+const Menu = React.forwardRef(({ isOpen, onSearch }, ref) => {
   if (!isOpen) return null
   const types = useMemo(() => Object.keys(PRODUCT_TYPES), [])
   const [selected, setSelected] = useState(types[0])
 
   const onFilter = value => {
-    console.log(value)
+    onSearch(value.brand)
   }
 
   const renderDetail = () => {
