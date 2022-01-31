@@ -23,7 +23,11 @@ const Home = props => {
     <Box>
       <HomeBanner />
       {sections.map(section => (
-        <ProductSection title={section.title} products={section.products} />
+        <ProductSection
+          key={section.title}
+          title={section.title}
+          products={section.products}
+        />
       ))}
     </Box>
   )

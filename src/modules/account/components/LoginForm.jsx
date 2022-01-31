@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Button,
@@ -11,12 +11,19 @@ import {
   Box,
   Text
 } from '@chakra-ui/react'
-
+import useAuth from '@/lib/useAuth'
 import { setToken } from '@/utils/auth'
 
 const LoginForm = ({ onClose }) => {
+  const [phone, setPhone] = useState()
+  const [password, setPassword] = useState()
+  const { login } = useAuth()
+
   const onLogin = () => {
-    setToken('token')
+    if (!password || !phone) return
+    // TODO: cheat
+    login({ phone, password })
+    onClose()
   }
 
   return (
@@ -25,13 +32,16 @@ const LoginForm = ({ onClose }) => {
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
           <Stack spacing={4} w={'full'} maxW={'md'}>
             <Heading fontSize={'2xl'}>Đăng nhập</Heading>
-            <FormControl id="email">
+            <FormControl id="phone" isRequired>
               <FormLabel>Số điện thoại</FormLabel>
-              <Input type="email" />
+              <Input type="number" onChange={e => setPhone(e.target.value)} />
             </FormControl>
-            <FormControl id="password">
+            <FormControl id="password" isRequired>
               <FormLabel>Mật khẩu</FormLabel>
-              <Input type="password" />
+              <Input
+                type="password"
+                onChange={e => setPassword(e.target.value)}
+              />
             </FormControl>
             <Stack spacing={6}>
               <Stack
@@ -59,6 +69,7 @@ const LoginForm = ({ onClose }) => {
                   boxShadow: 'xl'
                 }}
                 onClick={onLogin}
+                type="submit"
               >
                 Đăng nhập
               </Button>
