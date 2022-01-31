@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
-
+import { PageLoading } from '@/components'
 // Layout
 const AuthLayout = lazy(() => import('@/layouts/AuthLayout'))
 const MainLayout = lazy(() => import('@/layouts/main'))
@@ -26,6 +26,13 @@ const Cart = lazy(() => import('@/modules/cart'))
 const Product = lazy(() => import('@/modules/product'))
 const ProductList = lazy(() => import('@/modules/product/pages/List'))
 const ProductDetail = lazy(() => import('@/modules/product/pages/Detail'))
+
+// Admin
+const AdminProducts = lazy(() => import('@/modules/admin/pages/Products'))
+const AdminCreateProducts = lazy(() =>
+  import('@/modules/admin/pages/CreateProducts')
+)
+const AdminUsers = lazy(() => import('@/modules/admin/pages/Users'))
 
 // other
 const NotFound = lazy(() => import('@/components/NotFound'))
@@ -104,14 +111,30 @@ const appRoutes = [
         path: '/admin',
         name: 'Admin Layout',
         element: AdminLayout,
-        children: [{ path: '*', element: NotFound }]
+        children: [
+          {
+            path: 'products',
+            element: AdminProducts,
+            name: 'Danh sách sản phẩm',
+            children: [
+              {
+                path: 'create',
+                name: 'Thêm sản phẩm',
+                element: AdminCreateProducts
+              },
+              { path: '*', element: NotFound }
+            ]
+          },
+          { path: 'users', element: AdminUsers },
+          { path: '*', element: NotFound }
+        ]
       }
     ]
   }
 ]
 
 const RouteWithFallback = ({ element: Element, ...props }) => (
-  <Suspense fallback={<>...</>}>
+  <Suspense fallback={<PageLoading />}>
     <Element {...props} />
   </Suspense>
 )
