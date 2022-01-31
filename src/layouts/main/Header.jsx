@@ -44,6 +44,7 @@ const Header = () => {
   })
 
   const onSearch = value => {
+    onToggle(false)
     navigate({
       pathname: 'product',
       search: `?filter=${value}&page=${page || 1}&size=${size || 20}`
@@ -79,7 +80,7 @@ const Header = () => {
             <InputGroup>
               <Input
                 value={searchValue || ''}
-                placeholder="Tìm kiếm"
+                placeholder="Tìm kiếm theo tên sản phẩm"
                 onChange={onFilterChange}
               />
               <InputRightElement
@@ -105,7 +106,7 @@ const Header = () => {
           </HStack>
         </HStack>
       </Container>
-      <Menu ref={ref} isOpen={isOpen} />
+      <Menu ref={ref} isOpen={isOpen} onSearch={onSearch} />
     </Box>
   )
 }
