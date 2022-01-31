@@ -10,7 +10,15 @@ const styles = {
 }
 
 const components = {
+  Text: {
+    baseStyle: {
+      color: 'gray.700'
+    }
+  },
   Heading: {
+    baseStyle: {
+      color: '#2C3840'
+    },
     variants: {
       'section-title': {
         textDecoration: 'underline',
@@ -37,17 +45,14 @@ const fonts = {
 }
 
 const colors = {
-  grassTeal: '#88ccca',
-  dark: { dark: '#2C3840' },
-  red: { dark: '#F55446' },
-  cyan: { dark: '#02569D' },
   grey: {
     dark: '#CBD5DD'
   },
   text: {
     gray: '#2C3840',
     light: '#CBD5DD'
-  }
+  },
+  gray: { 700: '#2C3840' }
 }
 
 const config = {

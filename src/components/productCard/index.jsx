@@ -1,34 +1,22 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Badge, Image, Box, Button } from '@chakra-ui/react'
+import { Badge, Image, Box } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
 
-const productD = {
-  imageUrl:
-    'https://media-api-beta.thinkpro.vn/backend/uploads/product/color_images/2021/11/6/msi-gf63-thinkpro-1.jpg',
-  imageAlt: 'MSI GF63 Thin (Chính hãng) (468VN)',
-  beds: 3,
-  baths: 2,
-  title: 'MSI GF63 Thin (Chính hãng) (468VN)',
-  formattedPrice: '20.990.000',
-  reviewCount: 34,
-  rating: 4
-}
-
-const ProductCard = props => {
+const ProductCard = ({ product }) => {
   const navigate = useNavigate()
-  const product = productD
+
   return (
     <Box
       cursor="pointer"
-      maxW={220}
+      maxW={230}
       borderWidth="1px"
       borderRadius="lg"
       overflow="hidden"
-      minHeight={340}
-      onClick={() => navigate('/product/123123')}
+      minHeight={415}
+      onClick={() => navigate(`/product/${product.id}`)}
     >
-      <Image src={product.imageUrl} alt={product.imageAlt} />
+      <Image height="218px" src={product.imageUrl} alt={product.imageAlt} />
       <Box p="6">
         <Box display="flex" alignItems="baseline">
           <Badge borderRadius="full" px="2" colorScheme="teal">
@@ -43,11 +31,11 @@ const ProductCard = props => {
           lineHeight="tight"
           color="gray.700"
         >
-          {product.title}
+          {product.name}
         </Box>
 
         <Box color="red.400" fontSize="md" fontWeight="bold">
-          {product.formattedPrice}
+          {product.price}
           <Box as="span"> VND</Box>
         </Box>
 
@@ -57,7 +45,7 @@ const ProductCard = props => {
             .map((_, i) => (
               <StarIcon
                 key={i}
-                color={i < product.rating ? 'orange.300' : 'gray.300'}
+                color={i < product.rating || 3 ? 'orange.300' : 'gray.300'}
               />
             ))}
           <Box as="span" ml="2" color="gray.600" fontSize="sm">

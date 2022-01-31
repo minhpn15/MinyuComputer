@@ -1,4 +1,5 @@
 import React from 'react'
+import shallow from 'zustand/shallow'
 import {
   Box,
   Flex,
@@ -8,21 +9,25 @@ import {
   Container,
   Input,
   Button,
-  SimpleGrid,
   Divider,
   Grid,
   GridItem
 } from '@chakra-ui/react'
+import { LoadingWrapper } from '@/components'
 import ProductCard from './components/ProductCard'
+import { useStore } from '@/lib/StoreProvider'
 
 const Cart = () => {
+  const cart = useStore(state => state.cart, shallow)
+  const removeProduct = useStore(state => state.removeProduct)
+
   return (
     <Box>
       <Box py={4}></Box>
       <Heading lineHeight={1.1}>
         Giỏ hàng
         <Text as="span" color="pink.400">
-          ({0})
+          ({cart.length})
         </Text>
       </Heading>
       <Container
@@ -32,19 +37,21 @@ const Cart = () => {
         py={{ base: 4, sm: 8, lg: 8 }}
         gap={4}
       >
-        <GridItem colSpan={{ base: 1, md: 8 }}>
-          <Stack spacing={4}>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </Stack>
+        <GridItem colSpan={{ base: 12, md: 12, lg: 8 }}>
+          <LoadingWrapper isEmpty={!cart || cart.length === 0}>
+            <Stack spacing={4}>
+              {cart.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  product={product}
+                  onRemove={removeProduct}
+                />
+              ))}
+            </Stack>
+          </LoadingWrapper>
         </GridItem>
-        <GridItem colSpan={4}>
-          <Stack spacing={{ base: 1, md: 4 }} maxW={{ lg: 'lg' }}>
+        <GridItem colSpan={{ base: 12, md: 12, lg: 4 }}>
+          <Stack spacing={{ base: 4, md: 4 }} maxW={{ lg: 'lg' }}>
             <Box
               bg={'gray.50'}
               rounded={'xl'}

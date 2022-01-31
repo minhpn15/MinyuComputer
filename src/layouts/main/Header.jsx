@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDebouncedCallback } from 'use-debounce'
+import shallow from 'zustand/shallow'
 import {
   Button,
   Input,
@@ -13,18 +14,24 @@ import {
   Tooltip,
   useBoolean,
   useOutsideClick,
-  useDisclosure
+  useDisclosure,
+  Badge
 } from '@chakra-ui/react'
 import { SearchIcon, CloseIcon } from '@chakra-ui/icons'
 import { Cart, Logo, Menu as MenuIcon } from '@/assets/icons'
+import useQueryParameter from '@/lib/useQueryParameter'
+import { useStore } from '@/lib/StoreProvider'
 import UserIconGroup from './UserIconGroup'
 import Menu from './Menu'
 
 const Header = () => {
   const ref = React.useRef()
   const navigate = useNavigate()
+  const { filter, page, size } = useQueryParameter()
   const { isOpen, onToggle, onClose } = useDisclosure()
   const [isOverMenuBtn, setOverMenuBtn] = useBoolean()
+  const [searchValue, setSearchValue] = React.useState(filter)
+  const cart = useStore(state => state.cart, shallow)
 
   // menu button click debounce
   const debounced = useDebouncedCallback(() => {
@@ -36,12 +43,19 @@ const Header = () => {
     handler: () => debounced()
   })
 
-  // input
-  const onSearch = event => {
-    console.log('Search value:', event.target.value)
-    // call api here
+  const onSearch = value => {
+    navigate({
+      pathname: 'product',
+      search: `?filter=${value}&page=${page || 1}&size=${size || 20}`
+    })
   }
   const onSearchDebounced = useDebouncedCallback(onSearch, 700)
+
+  const onFilterChange = event => {
+    const value = event.target.value
+    setSearchValue(value)
+    onSearchDebounced(value)
+  }
 
   return (
     <Box position="relative">
@@ -63,18 +77,29 @@ const Header = () => {
           </Tooltip>
           <HStack flex={1} spacing={4}>
             <InputGroup>
-              <Input placeholder="Tìm kiếm" onChange={onSearchDebounced} />
+              <Input
+                value={searchValue || ''}
+                placeholder="Tìm kiếm"
+                onChange={onFilterChange}
+              />
               <InputRightElement
                 pointerEvents="none"
                 children={<SearchIcon color="gray.300" />}
               />
             </InputGroup>
             <Tooltip label={'Giỏ hàng'}>
-              <IconButton
-                variant="ghost"
-                icon={<Cart />}
-                onClick={() => navigate('cart')}
-              />
+              <Box position="relative">
+                <IconButton
+                  variant="ghost"
+                  icon={<Cart />}
+                  onClick={() => navigate('cart')}
+                />
+                <Box position="absolute" bottom={0} right={0}>
+                  <Badge colorScheme="red" rounded="6px">
+                    {(cart || []).length}
+                  </Badge>
+                </Box>
+              </Box>
             </Tooltip>
             <UserIconGroup />
           </HStack>

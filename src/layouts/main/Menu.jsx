@@ -27,7 +27,7 @@ const Menu = React.forwardRef(({ isOpen }, ref) => {
       <VStack p={6} spacing={4} alignItems="flex-start">
         <Heading color="cyan.600">{selected}</Heading>
         <Box>
-          <Text mb={4} fontSize="xl" color="gray.700" fontWeight="bold">
+          <Text mb={4} fontSize="xl" fontWeight="bold">
             Theo thương hiệu
           </Text>
           <Wrap spacing={4}>
@@ -47,19 +47,17 @@ const Menu = React.forwardRef(({ isOpen }, ref) => {
                     '& p': { color: 'white' }
                   }}
                 >
-                  <Text color="gray.700" fontWeight="bold">
-                    {brand}
-                  </Text>
+                  <Text fontWeight="bold">{brand}</Text>
                 </Box>
               </WrapItem>
             ))}
           </Wrap>
         </Box>
         <Box>
-          <Text mb={4} fontSize="xl" color="gray.700" fontWeight="bold">
+          <Text mb={4} fontSize="xl" fontWeight="bold">
             Theo nhu cầu
           </Text>
-          <Text color="gray.500">
+          <Text color="gray.600">
             Tính năng đang được phát triển, sẽ ra mắt trong thời gian tới
           </Text>
         </Box>
