@@ -15,12 +15,11 @@ import {
 } from '@chakra-ui/react'
 import { LoadingWrapper } from '@/components'
 import ProductCard from './components/ProductCard'
-import useCartStore from './useCartStore'
+import { useStore } from '@/lib/StoreProvider'
 
 const Cart = () => {
-  const cart = useCartStore(state => state.cart, shallow)
-  const removeProduct = useCartStore(state => state.removeProduct)
-  console.log('🚀 ~ file: index.jsx ~ line 21 ~ Cart ~ cart', removeProduct)
+  const cart = useStore(state => state.cart, shallow)
+  const removeProduct = useStore(state => state.removeProduct)
 
   return (
     <Box>

@@ -1,4 +1,10 @@
-import React, { createContext, useMemo, useCallback, useEffect } from 'react'
+import React, {
+  createContext,
+  useMemo,
+  useCallback,
+  useEffect,
+  useState
+} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useQuery, useQueryClient } from 'react-query'
 import { getToken, removeToken } from '@/utils/auth'
@@ -8,7 +14,7 @@ import { PageLoading } from '@/components'
 export const AuthContext = createContext()
 
 export default ({ children }) => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const queryClient = useQueryClient()
   const token = getToken()
   const {

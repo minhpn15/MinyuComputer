@@ -6,7 +6,8 @@ import {
   Text,
   Button,
   Grid,
-  GridItem
+  GridItem,
+  Image
 } from '@chakra-ui/react'
 import { DeleteIcon } from '@chakra-ui/icons'
 
@@ -32,7 +33,7 @@ const ProductCard = ({ product, onRemove }) => {
           rowSpan={{ base: 4, md: 4, lg: 1 }}
           colSpan={{ base: 2, md: 2, lg: 1 }}
         >
-          Image
+          <Image height={100} src={product?.imageUrl} alt={product?.imageAlt} />
         </GridItem>
         <GridItem
           rowSpan={{ base: 1, md: 1, lg: 1 }}
@@ -47,7 +48,7 @@ const ProductCard = ({ product, onRemove }) => {
           rowSpan={{ base: 1, md: 1, lg: 1 }}
           colSpan={{ md: 4, lg: 1 }}
         >
-          x{amount}
+          x{amount || 1}
         </GridItem>
         <GridItem
           rowSpan={{ base: 1, md: 1, lg: 1 }}

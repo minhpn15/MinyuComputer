@@ -1,4 +1,4 @@
-const LAPTOP = [
+export const LAPTOP = [
   {
     id: 'Laptop ASUS TUF Gaming F15 FX506LH HN002T',
     name: 'Laptop ASUS TUF Gaming F15 FX506LH HN002T',
@@ -408,7 +408,7 @@ const LAPTOP = [
   }
 ]
 
-const KEYBOARD = [
+export const KEYBOARD = [
   {
     id: 'Bàn phím Logitech G213',
     name: 'Bàn phím Logitech G213',
