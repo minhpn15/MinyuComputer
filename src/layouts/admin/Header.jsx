@@ -9,15 +9,17 @@ import {
   HStack,
   Tooltip,
   Heading,
-  Text
+  Text,
+  useDisclosure
 } from '@chakra-ui/react'
 import { Logo, Logout as LogoutIcon } from '@/assets/icons'
+import LoginModal from '@/modules/account/components/LoginModal'
 import useAuth from '@/lib/useAuth'
 
 const Header = () => {
   const navigate = useNavigate()
-
-  const { isLogged, profile, logout } = useAuth()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isLogged, logout } = useAuth()
 
   return (
     <Box position="relative">
@@ -60,6 +62,7 @@ const Header = () => {
           </HStack>
         </HStack>
       </Container>
+      <LoginModal isOpen={isOpen} onClose={onClose} />
     </Box>
   )
 }
