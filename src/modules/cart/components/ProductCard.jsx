@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import {
   Box,
   Flex,
@@ -10,7 +10,10 @@ import {
 } from '@chakra-ui/react'
 import { DeleteIcon } from '@chakra-ui/icons'
 
-const ProductCard = () => {
+const ProductCard = ({ product, onRemove }) => {
+  const { name, price, amount } = product
+  const finalPrice = useMemo(() => price * (amount || 1), [])
+
   return (
     <Box
       bg={'gray.50'}
@@ -21,28 +24,45 @@ const ProductCard = () => {
       minHeight={150}
     >
       <Grid
-        templateRows="repeat(1, 1fr)"
+        templateRows={{ md: 'repeat(4, 1fr)', lg: 'repeat(1, 1fr)' }}
         templateColumns="repeat(6, 1fr)"
         gap={2}
       >
-        <GridItem colSpan={1}>Image</GridItem>
-        <GridItem colSpan={3}>
-          <Heading fontSize={'md'}>Asus Zenbook Q408UG</Heading>
+        <GridItem
+          rowSpan={{ base: 4, md: 4, lg: 1 }}
+          colSpan={{ base: 2, md: 2, lg: 1 }}
+        >
+          Image
+        </GridItem>
+        <GridItem
+          rowSpan={{ base: 1, md: 1, lg: 1 }}
+          colSpan={{ base: 4, md: 4, lg: 3 }}
+        >
+          <Heading fontSize={'md'}>{name}</Heading>
           <Text color={'pink.400'} fontWeight={'bold'}>
-            18.490.000
+            {price}
           </Text>
         </GridItem>
-        <GridItem colSpan={1}>x1</GridItem>
-        <GridItem colSpan={1}>
+        <GridItem
+          rowSpan={{ base: 1, md: 1, lg: 1 }}
+          colSpan={{ md: 4, lg: 1 }}
+        >
+          x{amount}
+        </GridItem>
+        <GridItem
+          rowSpan={{ base: 1, md: 1, lg: 1 }}
+          colSpan={{ md: 4, lg: 1 }}
+        >
           <Flex flexDirection={'column'} alignItems={'end'}>
             <Text color={'pink.400'} fontWeight={'bold'}>
-              18.490.000
+              {finalPrice || 0}
             </Text>
             <Button
               leftIcon={<DeleteIcon />}
               colorScheme="pink"
               variant="ghost"
               size="md"
+              onClick={() => onRemove(product)}
             >
               Xóa
             </Button>
