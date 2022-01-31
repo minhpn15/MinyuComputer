@@ -19,7 +19,7 @@ const Menu = React.forwardRef(({ isOpen, onSearch }, ref) => {
   const [selected, setSelected] = useState(types[0])
 
   const onFilter = value => {
-    onSearch(value.brand)
+    onSearch(value)
   }
 
   const renderDetail = () => {
@@ -41,7 +41,7 @@ const Menu = React.forwardRef(({ isOpen, onSearch }, ref) => {
                   role="button"
                   cursor="pointer"
                   bg="gray.200"
-                  onClick={() => onFilter({ brand })}
+                  onClick={() => onFilter({ type: selected, brand })}
                   _hover={{
                     bg: 'gray.500',
                     '& p': { color: 'white' }
