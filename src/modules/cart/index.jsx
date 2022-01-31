@@ -14,12 +14,24 @@ import {
   GridItem
 } from '@chakra-ui/react'
 import { LoadingWrapper } from '@/components'
+import { formatCurrency } from '@/utils/common'
 import ProductCard from './components/ProductCard'
 import { useStore } from '@/lib/StoreProvider'
 
 const Cart = () => {
   const cart = useStore(state => state.cart, shallow)
   const removeProduct = useStore(state => state.removeProduct)
+
+  const tempPrice = React.useMemo(() => {
+    const sum = cart.reduce(
+      (partialSum, a) => partialSum + a.price * (a.amount || 1),
+      0
+    )
+    return sum
+  }, [cart])
+
+  const discount = 0
+  const totalPrice = tempPrice - discount
 
   return (
     <Box>
@@ -83,17 +95,17 @@ const Cart = () => {
               <Stack spacing={4} mt={4}>
                 <Flex justifyContent={'space-between'}>
                   <Text>Tạm tính</Text>
-                  <Text>18.000.000</Text>
+                  <Text>{formatCurrency(tempPrice)}</Text>
                 </Flex>
                 <Flex justifyContent={'space-between'}>
                   <Text>Khuyến mãi</Text>
-                  <Text>- 200.000</Text>
+                  <Text>- {formatCurrency(discount)}</Text>
                 </Flex>
                 <Divider />
                 <Flex justifyContent={'space-between'}>
                   <Text>Tổng cộng</Text>
                   <Text color="pink.400" fontWeight={700}>
-                    18.800.000
+                    {formatCurrency(totalPrice)}
                   </Text>
                 </Flex>
                 <Divider variant="dashed" color="gray.800" />

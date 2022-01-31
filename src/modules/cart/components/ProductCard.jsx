@@ -10,6 +10,7 @@ import {
   Image
 } from '@chakra-ui/react'
 import { DeleteIcon } from '@chakra-ui/icons'
+import { formatCurrency } from '@/utils/common'
 
 const ProductCard = ({ product, onRemove }) => {
   const { name, price, amount } = product
@@ -41,7 +42,7 @@ const ProductCard = ({ product, onRemove }) => {
         >
           <Heading fontSize={'md'}>{name}</Heading>
           <Text color={'pink.400'} fontWeight={'bold'}>
-            {price}
+            {formatCurrency(price)}
           </Text>
         </GridItem>
         <GridItem
@@ -56,7 +57,7 @@ const ProductCard = ({ product, onRemove }) => {
         >
           <Flex flexDirection={'column'} alignItems={'end'}>
             <Text color={'pink.400'} fontWeight={'bold'}>
-              {finalPrice || 0}
+              {formatCurrency(finalPrice || 0)}
             </Text>
             <Button
               leftIcon={<DeleteIcon />}
