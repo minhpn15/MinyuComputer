@@ -5,7 +5,7 @@ import Carousel from '@/components/carousels'
 const HomeBanner = props => {
   return (
     <Grid
-      h="500px"
+      h="413px"
       templateRows="repeat(3, 1fr)"
       templateColumns="repeat(6, 1fr)"
       gap={4}
